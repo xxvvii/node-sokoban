@@ -11,7 +11,7 @@ setup your development quickly.
 * nodemon and pm2 for both development and production usage
 * Some useful scripts to help you manage dock container
 * Using taobao npm repo as default, you may change it in the Dockerfile as you wish
-* A example express server in 'src', which mount as a volume in docker container, just replace it with your own real project!
+* An example express server in 'src', which mounts as a volume in docker container, just replace it with your own real project!
 
 ## Building example image
 ```
