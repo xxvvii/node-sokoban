@@ -48,3 +48,10 @@ bin/stop-server.sh
 ```
 
 Above command will stop the docker container.
+
+### Shell
+```
+bin/shell.sh
+```
+
+You may use this script to access the container shell and install node dependencies. 
