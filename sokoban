@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+export docker_image="node-runtime"
+export http_port=8080
+export debug_port=5858
+export container_instance="node-server"
+
+start_run_container() {
+    docker run --rm \
+         --name $container_instance \
+         -p $http_port:$http_port \
+         -p $debug_port:$debug_port \
+         -v $PWD/src:/src $docker_image $1
+}
+
+show_help() {
+cat << EOF
+Usage: sokoban.sh COMMAND
+  Command:
+    run     Run node server container
+    debug   Run node server container with debug option
+    stop    Stop running container
+    shell   Login into container shell
+    build   Build docker image
+EOF
+}
+
+case $1 in
+run) start_run_container "/bin/bash bin/run.sh"
+    ;;
+debug) start_run_container "/bin/bash bin/debug.sh"
+    ;;
+stop) docker stop $container_instance
+    ;;
+shell) docker run -it --rm -v $PWD/src:/src $docker_image bash
+    ;;
+build) docker build -t $docker_image .
+    ;;
+*) show_help
+    ;;
+esac
+
+#$SHELL "bin/$1.sh"
