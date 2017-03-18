@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-bin/start-server.sh "/bin/bash bin/run.sh"
+bin/start.sh "/bin/bash bin/run.sh"

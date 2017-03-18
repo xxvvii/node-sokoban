@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-docker build -t=devenv .
+docker build -t=$docker_image .
