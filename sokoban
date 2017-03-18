@@ -14,7 +14,7 @@ start_run_container() {
 
 show_help() {
 cat << EOF
-Usage: sokoban.sh COMMAND
+Usage: sokoban COMMAND
   Command:
     run     Run node server container
     debug   Run node server container with debug option

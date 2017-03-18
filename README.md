@@ -6,29 +6,36 @@ setup your development quickly.
 *** Windows script support is working in progress, coming soon... ***
 
 ## What's included in this docker image
-* This image is built on top of CentOS7 with development toolkit installed
+* This image is built on top of CentOS with development toolkit installed
 * Node.js 6.10.0 with nvm installed
 * nodemon and pm2 for both development and production usage
 * Some useful scripts to help you manage dock container
 * Using taobao npm repo as default, you may change it in the Dockerfile as you wish
 * An example express server in 'src', which mounts as a volume in docker container, just replace it with your own real project!
 
+## Commands
+* run     Run node server container
+* debug   Run node server container with debug option
+* stop    Stop running container
+* shell   Login into container shell
+* build   Build docker image
+
 ## Building example image
 ```
-bin/build.sh
+./sokoban build
 ```
-By default the docker image name is 'devenv', you could change it by searching string 'devenv' and replace it in directory 'bin'.  
+By default the docker image name is 'node-runtime', you could change it by editing variable in script 'sokoban' 
 
 ## Start docker container
 
 ### Run server normally
 ```
-bin/run.sh
+./sokoban run
 ```
 
 ### Run server with debug option
 ```
-bin/debug.sh
+./sokoban debug
 ```
 
 Note the default debug port is 5858
@@ -51,7 +58,7 @@ Above command will stop the docker container.
 
 ### Shell
 ```
-bin/shell.sh
+./sokoban shell
 ```
 
 You may use this script to access the container shell and install node dependencies. 
