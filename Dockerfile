@@ -1,4 +1,6 @@
 FROM centos:7
+COPY /centos/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+
 RUN yum update -y && \
     yum group install "Development Tools" -y && \
     yum clean all
