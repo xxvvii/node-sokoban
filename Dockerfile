@@ -6,13 +6,13 @@ RUN yum update -y && \
     yum clean all
 
 # Install nvm as node.js version manager and setup mirrors
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 ENV NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node \
     NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
 
 # Node.js version
-ENV NODE_VERSION 6.10.0
-
+ENV NODE_VERSION 8.9.3
+ 
 # Install node.js update npm and install utilities
 RUN echo Installing node.js v$NODE_VERSION... && \
     . $HOME/.nvm/nvm.sh && \

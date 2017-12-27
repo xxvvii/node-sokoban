@@ -3,8 +3,6 @@
 A ready to use node.js general purpose development environment docker template image which may help you
 setup your development quickly.
 
-*** Windows script support is working in progress, coming soon... ***
-
 ## What's included in this docker image
 * This image is built on top of CentOS with development toolkit installed
 * Node.js 6.10.0 with nvm installed
